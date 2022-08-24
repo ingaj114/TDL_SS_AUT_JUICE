@@ -32,13 +32,6 @@ class RegistrationPage extends BasePage {
     static get register() {
         return cy.get("#registerButton")
     }
-
-
-    
-
-
-    
-
 }
 
 export default RegistrationPage;

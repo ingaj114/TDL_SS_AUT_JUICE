@@ -1,3 +1,4 @@
+import LemonSearchPage from "../pageObjects/LemonSearchPage.page";
 import LoginPage from "../pageObjects/LoginPage.page";
 import RegistrationPage from "../pageObjects/RegistrationPage.page";
 
@@ -16,8 +17,7 @@ describe("Elements Page", () => {
       LoginPage.account.click();
       LoginPage.validate.should("contain", "demo");
     });
-
-    it.only("Registration scenario", () => {
+    it("Registration scenario", () => {
       LoginPage.account.click();
       LoginPage.loginAccount.click();
       LoginPage.newCustomer.click();    
@@ -34,6 +34,13 @@ describe("Elements Page", () => {
       LoginPage.login.click();
       LoginPage.account.click();
       LoginPage.validate.should("contain", email);
+    });
+
+    it.only("Lemon scenario", () => {
+      LoginPage.searchIcon.click({force: true});
+      LoginPage.searchField.type("Lemon{enter}");
+      LemonSearchPage.lemonImg.click();
+      LemonSearchPage.text.should("contain", "Sour but full of vitamins.")
     });
 
 

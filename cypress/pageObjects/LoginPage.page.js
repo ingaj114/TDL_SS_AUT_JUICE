@@ -40,6 +40,17 @@ class LoginPage extends BasePage {
     static get newCustomer() {
         return cy.get("#newCustomerLink")
     }
+
+    static get searchIcon(){
+        return cy.get('mat-form-field.mat-search_field')
+    }
+
+    static get searchField() {
+        return cy.get("#searchQuery")
+    }   
+
+    
+
 }
 
 export default LoginPage;
